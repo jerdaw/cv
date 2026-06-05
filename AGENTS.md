@@ -1,10 +1,10 @@
 # Agent Instructions
 
-This file provides guidance for AI coding assistants (Claude Code, Gemini CLI, Codex, etc.) working on this repository.
+This file provides guidance for automated coding tools working on this repository.
 
 ## Project Overview
 
-Static Astro portfolio site for Jeremy Dawson. Single-page, deployed to GitHub Pages at [jeremydawson.ca](https://jeremydawson.ca/).
+Static Astro professional hub for Jeremy Dawson. Single-page, deployed to GitHub Pages at [jeremydawson.ca](https://jeremydawson.ca/).
 
 **Tech stack**: Astro 6, TypeScript, vanilla CSS, plain JavaScript (no framework in public/).
 
@@ -21,15 +21,14 @@ Static Astro portfolio site for Jeremy Dawson. Single-page, deployed to GitHub P
 ## Development
 
 ```bash
-# Requires Node ≥22, nvm recommended
-nvm use 24
+# Requires Node ≥22; Node 24 is recommended
 npm install
 npm run dev       # dev server on :4321
 npm run check     # Astro type-check (runs in CI)
 npm run build     # production build to dist/
 ```
 
-Use the `dev` launch configuration in `.claude/launch.json` when running via Claude Code preview tools.
+Use local preview launch configuration if present. Do not commit local tool configuration.
 
 ## Coding Conventions
 
@@ -45,6 +44,8 @@ Use the `dev` launch configuration in `.claude/launch.json` when running via Cla
 **All commits must be authored by the human contributor (Jeremy Dawson) only.**
 
 - AI agents may assist with code but must not appear as commit authors or co-authors.
+- Only Jeremy Dawson or another actual human contributor may be listed as an author, co-author, contributor, reviewer, signer, or changelog credit.
+- Do not name Claude, Codex, Gemini, Copilot, ChatGPT, OpenAI, or any other automation tool in authorship, contribution, review, changelog, or release-note attribution.
 - Do not add `Co-Authored-By`, `Signed-off-by`, or any trailer that names an AI model.
 - Do not add AI attribution to comments, docstrings, changelogs, or any file tracked in git.
 - The git user identity (`git config user.name / user.email`) should remain as the human's.

@@ -2,25 +2,17 @@
 
 ## Current Status
 
-Phase: `Post-launch polish — visual motion layer active`
+Phase: `Public-safe professional hub`
 
 ## What's Live
 
 - Astro one-page site with typed content model (`src/data/profile.ts`)
-- New "Watermelon-inspired" design system (dark teal, coral, warm cream; Montserrat + Open Sans)
-- GitHub Pages deployment with custom domain `jeremydawson.ca`
-- Full scroll-driven SVG timeline path animation:
-  - Per-section bezier path with gradient color shifts (coral → teal → steel blue)
-  - Ghost echo paths, stroke widening (2.5→12px), leading-edge dot, section transition nodes
-  - About section: rainbow portal split (6 parallel lines through a glowing gateway)
-  - Projects section: 5-path fan-out converging at the prism face
-  - Research section: DSOTM-style glass prism with spectral ray dispersion
-  - Contact section: rays converge at section boundary, terminus orb at page end
-  - Full `prefers-reduced-motion` fallback
-- Section text layered above SVG lines (z-index sandwich: bg → SVG → content)
-- Fan paths paced to main line arc-length (not raw scroll position)
+- Public-safe placeholder biography while the complete CV is finalized
+- Selected public project summaries without stale metrics or repository/profile links
+- Scroll-driven visual timeline with full `prefers-reduced-motion` fallback
 - Public email revealed on request (not in HTML source)
 - Social preview image and Open Graph / Twitter metadata
+- No downloadable CV or resume published from this repo
 
 ## Remaining Tasks
 
@@ -28,8 +20,8 @@ Status key: `pending` · `optional`
 
 ### P1
 
-- `pending` Add a verified public LinkedIn URL to `src/data/profile.ts` and expose it in the contact section.
-- `optional` Add `public/resume.pdf` and a corresponding contact link if a downloadable resume should be public.
+- `pending` Finalize the master CV before adding any public PDF or downloadable resume link.
+- `pending` Add verified ORCID, LinkedIn, and GitHub links only after each destination is current and ready for broad public review.
 
 ### Polish / Visual
 
@@ -38,8 +30,6 @@ Status key: `pending` · `optional`
 
 ## Notes
 
-- Repository: `https://github.com/jerdaw/jeremydawson-site`
 - Live URL: `https://jeremydawson.ca/`
-- LinkedIn intentionally absent until a verified public URL is confirmed.
-- Resume download intentionally absent until a public-safe PDF is ready.
+- Public documentation intentionally excludes deployment runbooks, DNS notes, monitoring details, credentials, and environment-specific paths.
 - CI runs `npm run check` + `npm run build` on every push to `main`.

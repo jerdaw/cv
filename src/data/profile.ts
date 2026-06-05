@@ -75,9 +75,9 @@ export type ResearchEntry = {
 };
 
 export const siteMeta: SiteMeta = {
-  title: "Jeremy Dawson | Software, Research, and Public-Interest Systems",
+  title: "Jeremy J. Dawson | Health Systems, Ethics, and Public-Interest Technology",
   description:
-    "Jeremy Dawson builds software and information tools for health-facing, public-interest, and research-heavy work.",
+    "Jeremy J. Dawson is an incoming medical student with a background in philosophy, ethics, public-interest technology, and health systems.",
   siteName: "Jeremy Dawson",
   socialImage: {
     path: "/og/jeremy-dawson-social.png",
@@ -97,10 +97,10 @@ export const navLinks: NavLink[] = [
 ];
 
 export const hero = {
-  eyebrow: "Software, research, and public-interest systems",
-  headline: "I build software for health, research, and public systems.",
+  eyebrow: "Health systems, ethics, and public-interest technology",
+  headline: "Jeremy J. Dawson",
   intro:
-    "I build tools for health information, service access, archival continuity, and research communication. My background combines software development, academic research, teaching, and publishing.",
+    "Jeremy J. Dawson is an incoming medical student with a background in philosophy, ethics, public-interest technology, and health systems.",
   primaryCta: {
     href: "#projects",
     label: "View selected work",
@@ -111,28 +111,28 @@ export const hero = {
   } satisfies CtaLink,
   highlights: [
     {
-      label: "Current work",
-      value: "Health and public-interest products",
-    },
-    {
-      label: "Strengths",
-      value: "Product thinking, data clarity, communication",
+      label: "Current status",
+      value: "Incoming medical student",
     },
     {
       label: "Background",
-      value: "Software, research, teaching, publishing",
+      value: "Philosophy, ethics, public-interest technology",
+    },
+    {
+      label: "CV",
+      value: "Available on request",
     },
   ],
 };
 
 export const about = {
   eyebrow: "About",
-  title: "Software for domains that need precision.",
+  title: "Public work, kept deliberately concise.",
   lead:
-    "I do my best work on problems where software, data, and explanation have to hold together.",
+    "This site is a temporary public hub while a complete CV is being finalized.",
   body: [
-    "Before moving into software full-time, I worked in philosophy, teaching, research support, and academic publishing. That background gave me a high tolerance for ambiguity, a low tolerance for sloppy reasoning, and a lasting interest in careful communication.",
-    "The work I take on now usually sits in health, public-interest, and research-heavy settings. It tends to involve messy source material, real workflow constraints, and users who need clarity more than spectacle.",
+    "My public work has focused on health information, service access, archival continuity, research communication, and tools that make assumptions and methods easier to inspect.",
+    "Earlier work in philosophy, teaching, research support, academic publishing, and software development still shapes how I approach technical projects: careful claims, clear boundaries, and practical communication.",
   ],
   principles: [
     "Make assumptions and methodology visible.",
@@ -143,9 +143,9 @@ export const about = {
 
 export const experienceSection: SectionIntro = {
   eyebrow: "Experience",
-  title: "Recent work and background.",
+  title: "Selected work and background.",
   lede:
-    "Recent work centers on public-interest and health-facing products. Earlier roles in research, teaching, and publishing still shape how I design software and explain technical material.",
+    "A concise public summary of selected health-facing, public-interest, research, teaching, publishing, and software work.",
 };
 
 export const experience: TimelineEntry[] = [
@@ -153,7 +153,7 @@ export const experience: TimelineEntry[] = [
     title: "Founder and Developer",
     organization: "Wait Time Canada",
     dateRange: "2026 to present",
-    location: "Kingston, ON",
+    location: "Canada",
     summary:
       "Building a live observatory for Canadian emergency department wait times, including province-level data pipelines, measurement tagging, and public explanations of why many cross-province comparisons are not methodologically equivalent.",
     tags: ["Health data", "Analytics", "Methodology"],
@@ -162,7 +162,7 @@ export const experience: TimelineEntry[] = [
     title: "Founder and Developer",
     organization: "VisitBrief.com",
     dateRange: "2026 to present",
-    location: "Kingston, ON",
+    location: "Canada",
     summary:
       "Building a visit-preparation tool that helps patients and caregivers turn complex histories into concise one-page briefs while staying outside diagnosis, triage, and treatment advice.",
     tags: ["Product design", "Health communication", "Safety boundaries"],
@@ -171,7 +171,7 @@ export const experience: TimelineEntry[] = [
     title: "Founder and Developer",
     organization: "HelpBridge.ca and HealthArchive.ca",
     dateRange: "2025 to present",
-    location: "Kingston, ON",
+    location: "Canada",
     summary:
       "Building public-interest platforms for verified service discovery and long-term preservation of health information, with emphasis on governance, accessibility, and continuity.",
     tags: ["Service access", "Archiving", "Accessibility"],
@@ -180,25 +180,25 @@ export const experience: TimelineEntry[] = [
     title: "Software Developer",
     organization: "RestoredCDC.org",
     dateRange: "2025 to present",
-    location: "Kingston, ON",
+    location: "Canada",
     summary:
       "Contributing web development, search, and infrastructure work that improves access to archived CDC public-health material.",
     tags: ["Web development", "Search", "Archival systems"],
   },
   {
     title: "Independent Software Developer",
-    organization: "Financial investment application",
+    organization: "Independent software product work",
     dateRange: "2022 to 2025",
-    location: "Waterloo, ON",
+    location: "Canada",
     summary:
-      "Worked full-time as an independent developer building an end-to-end investment platform with real-time analytics, rules-based execution, backtesting, and risk controls.",
-    tags: ["Full-stack development", "Analytics", "Risk systems"],
+      "Worked full-time as an independent developer building full-stack product systems with data pipelines, analytics, workflow tooling, and reliability-focused interfaces.",
+    tags: ["Full-stack development", "Analytics", "Product systems"],
   },
   {
     title: "Teaching Assistant, Research Support, and Publishing Work",
-    organization: "UBC, Toronto Metropolitan University, and Canadian Journal of Philosophy",
+    organization: "Canadian universities and academic publishing contexts",
     dateRange: "2013 to 2019",
-    location: "Toronto, ON and Vancouver, BC",
+    location: "Canada",
     summary:
       "Taught undergraduate courses, supported research and conference operations, and worked in academic publishing and writing support. That experience still shapes how I handle communication-heavy technical work.",
     tags: ["Teaching", "Research support", "Publishing"],
@@ -209,7 +209,7 @@ export const projectsSection: SectionIntro = {
   eyebrow: "Selected Work",
   title: "Selected projects.",
   lede:
-    "These projects best represent how I work: end-to-end ownership, careful boundaries, and systems that stay legible to the people who depend on them.",
+    "Selected public projects are listed at a high level. Repository and social links are kept out until each public destination is ready for broad review.",
 };
 
 export const featuredProjects: ProjectEntry[] = [
@@ -223,10 +223,8 @@ export const featuredProjects: ProjectEntry[] = [
     contribution:
       "I built the data pipelines, measurement taxonomy, explanatory content, and public interface so users can inspect the methodology instead of trusting a summary number.",
     stack: ["Astro", "Data pipelines", "Health analytics", "Methodology design"],
-    metrics: "Current dataset covers 390-plus hospital records across 4 provinces.",
     links: [
       { label: "Live site", href: "https://wait-time.ca" },
-      { label: "GitHub", href: "https://github.com/jerdaw/waittimecanada" },
     ],
   },
   {
@@ -241,7 +239,6 @@ export const featuredProjects: ProjectEntry[] = [
     stack: ["Workflow design", "Health communication", "Safety-first UX"],
     links: [
       { label: "Live site", href: "https://visitbrief.com" },
-      { label: "GitHub", href: "https://github.com/jerdaw/visitbrief" },
     ],
   },
   {
@@ -254,10 +251,8 @@ export const featuredProjects: ProjectEntry[] = [
     contribution:
       "I built the verification model, directory structure, and public-facing product around trust, clarity, accessibility, and local usefulness.",
     stack: ["Information architecture", "Accessibility", "Service discovery"],
-    metrics: "Initial dataset covers 196 hand-verified Kingston services.",
     links: [
       { label: "Live site", href: "https://helpbridge.ca" },
-      { label: "GitHub", href: "https://github.com/jerdaw/helpbridge" },
     ],
   },
   {
@@ -272,7 +267,6 @@ export const featuredProjects: ProjectEntry[] = [
     stack: ["Archival systems", "Content strategy", "Static delivery"],
     links: [
       { label: "Live site", href: "https://healtharchive.ca" },
-      { label: "Backend repo", href: "https://github.com/jerdaw/healtharchive-backend" },
     ],
   },
   {
@@ -287,7 +281,6 @@ export const featuredProjects: ProjectEntry[] = [
     stack: ["Web development", "Infrastructure", "Search and comparison"],
     links: [
       { label: "Project site", href: "https://restoredcdc.org" },
-      { label: "GitHub org", href: "https://github.com/RestoredCDC" },
     ],
   },
 ];
@@ -312,7 +305,7 @@ export const researchCommunication: ResearchEntry[] = [
     date: "2025",
     format: "Canadian Conference on Physician Health",
     summary:
-      "Prepared and delivered a conference presentation in Vancouver translating the same research into a medicine-facing oral presentation.",
+      "Prepared and delivered a conference presentation translating the same research into a medicine-facing oral presentation.",
   },
   {
     title: "Medical devices education session",
@@ -327,7 +320,7 @@ export const contactSection: SectionIntro = {
   eyebrow: "Contact",
   title: "Get in touch.",
   lede:
-    "Email is the best path for roles, collaboration, or research-adjacent work. GitHub and current project links are below.",
+    "Email is the best path for roles, collaboration, or research-adjacent work. CV available on request.",
 };
 
 export const privateEmailContact: PrivateContactCard = {
@@ -340,12 +333,6 @@ export const privateEmailContact: PrivateContactCard = {
 };
 
 export const contactLinks: ContactLink[] = [
-  {
-    label: "GitHub",
-    value: "github.com/jerdaw",
-    href: "https://github.com/jerdaw",
-    detail: "Code, project history, and build documentation.",
-  },
   {
     label: "Wait Time Canada",
     value: "wait-time.ca",
@@ -360,4 +347,4 @@ export const contactLinks: ContactLink[] = [
   },
 ];
 
-export const footerText = "Jeremy Dawson. Software, research, and public-interest systems.";
+export const footerText = "Jeremy J. Dawson. Health systems, ethics, and public-interest technology.";
