@@ -28,8 +28,12 @@ Status key: `pending` · `optional`
 - `optional` Per-section timeline timing fine-tuning as content evolves.
 - `optional` Additional project or research entries as work becomes public.
 
+### Maintenance
+
+- `pending` Track the remaining `yaml-language-server` / `yaml` moderate advisory from `@astrojs/check`; avoid `npm audit fix --force` unless the breaking tool change is reviewed.
+
 ## Notes
 
 - Live URL: `https://jeremydawson.ca/`
 - Public documentation intentionally excludes deployment runbooks, DNS notes, monitoring details, credentials, and environment-specific paths.
-- CI runs `npm run check` + `npm run build` on every push to `main`.
+- CI runs `npm run check` + `npm run build` on every push to `main`. Browser/Playwright-style checks should stay in GitHub CI if added later.
