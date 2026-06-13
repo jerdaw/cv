@@ -20,6 +20,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h1 id="coming-soon-title">{comingSoon.title}</h1>
       <p class="coming-soon__message">{comingSoon.message}</p>
       <p class="coming-soon__note">{comingSoon.note}</p>
+      <ul class="coming-soon__details" aria-label="Site status">
+        {comingSoon.details.map((detail) => (
+          <li>{detail}</li>
+        ))}
+      </ul>
     </section>
   </main>
 </BaseLayout>
