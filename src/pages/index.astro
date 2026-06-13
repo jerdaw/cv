@@ -1,25 +1,5 @@
 ---
-import Enhancements from "../components/Enhancements.astro";
-import ExperienceTimeline from "../components/ExperienceTimeline.astro";
-import ProjectCards from "../components/ProjectCards.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import TimelinePath from "../components/TimelinePath.astro";
-import {
-  about,
-  contactLinks,
-  contactSection,
-  experience,
-  experienceSection,
-  footerText,
-  featuredProjects,
-  hero,
-  navLinks,
-  privateEmailContact,
-  projectsSection,
-  researchCommunication,
-  researchSection,
-  siteMeta,
-} from "../data/profile";
+import { comingSoon, siteMeta } from "../data/profile";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -27,158 +7,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title={siteMeta.title}
   description={siteMeta.description}
   siteName={siteMeta.siteName}
-  image={siteMeta.socialImage.path}
-  imageAlt={siteMeta.socialImage.alt}
-  imageWidth={siteMeta.socialImage.width}
-  imageHeight={siteMeta.socialImage.height}
 >
-  <div class="site-shell">
-    <TimelinePath />
-    <SiteHeader navLinks={navLinks} />
-
-    <main data-scroll-root>
-      <section class="section hero" id="top" data-section="top">
-        <div class="hero__copy observe is-visible" data-reveal>
-          <p class="hero__eyebrow">{hero.eyebrow}</p>
-          <h1 class="hero__title">{hero.headline}</h1>
-          <p class="hero__intro">{hero.intro}</p>
-
-          <div class="hero__actions">
-            <a class="button button--primary" href={hero.primaryCta.href}>
-              {hero.primaryCta.label}
-            </a>
-            <a class="button button--secondary" href={hero.secondaryCta.href}>
-              {hero.secondaryCta.label}
-            </a>
-          </div>
-
-          <dl class="hero__highlights">
-            {hero.highlights.map((item) => (
-              <div class="hero__stat">
-                <dt>{item.label}</dt>
-                <dd>{item.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      <section class="section" id="about" data-section="about">
-        <p class="section__eyebrow observe" data-reveal style="--reveal-delay: 0ms">{about.eyebrow}</p>
-        <div class="about">
-          <div class="about__body observe" data-reveal style="--reveal-delay: 100ms">
-            <h2 class="section__title">{about.title}</h2>
-            <p class="about__lead">{about.lead}</p>
-            {about.body.map((paragraph) => (
-              <p>{paragraph}</p>
-            ))}
-          </div>
-
-          <ul class="about__principles observe" data-reveal aria-label="Working principles" style="--reveal-delay: 200ms">
-            {about.principles.map((principle) => (
-              <li>{principle}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="experience" data-section="experience">
-        <p class="section__eyebrow observe" data-reveal style="--reveal-delay: 0ms">{experienceSection.eyebrow}</p>
-        <h2 class="section__title observe" data-reveal style="--reveal-delay: 100ms">{experienceSection.title}</h2>
-        <p class="section__lede observe" data-reveal style="--reveal-delay: 200ms">{experienceSection.lede}</p>
-
-        <div class="experience-shell">
-          <ExperienceTimeline entries={experience} />
-        </div>
-      </section>
-
-      <section class="section" id="projects" data-section="projects">
-        <p class="section__eyebrow observe" data-reveal style="--reveal-delay: 0ms">{projectsSection.eyebrow}</p>
-        <h2 class="section__title observe" data-reveal style="--reveal-delay: 100ms">{projectsSection.title}</h2>
-        <p class="section__lede observe" data-reveal style="--reveal-delay: 200ms">{projectsSection.lede}</p>
-
-        <div style="margin-top: 2rem;">
-          <ProjectCards projects={featuredProjects} />
-        </div>
-      </section>
-
-      <section class="section" id="research" data-section="research">
-        <p class="section__eyebrow observe" data-reveal style="--reveal-delay: 0ms">{researchSection.eyebrow}</p>
-        <h2 class="section__title observe" data-reveal style="--reveal-delay: 100ms">{researchSection.title}</h2>
-        <p class="section__lede observe" data-reveal style="--reveal-delay: 200ms">{researchSection.lede}</p>
-
-        <div class="speaking-grid">
-          {researchCommunication.map((entry) => (
-            <article class="speaking-card observe" data-reveal>
-              <p>
-                {entry.date} · {entry.format}
-              </p>
-              <h3>{entry.title}</h3>
-              <p>{entry.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section class="section" id="contact" data-section="contact">
-        <p class="section__eyebrow observe" data-reveal style="--reveal-delay: 0ms">{contactSection.eyebrow}</p>
-        <h2 class="section__title observe" data-reveal style="--reveal-delay: 100ms">{contactSection.title}</h2>
-        <p class="section__lede observe" data-reveal style="--reveal-delay: 200ms">{contactSection.lede}</p>
-
-        <div class="contact-grid">
-          <article class="contact-card contact-card--private observe" data-reveal data-email-card>
-            <div class="contact-card__label">{privateEmailContact.label}</div>
-            <div
-              class="contact-card__value"
-              data-email-value
-              aria-live="polite"
-            >
-              {privateEmailContact.placeholder}
-            </div>
-            <div class="contact-card__detail" data-email-detail>
-              {privateEmailContact.detail}
-            </div>
-            <div class="contact-card__actions">
-              <button
-                type="button"
-                class="contact-card__button"
-                data-email-reveal
-              >
-                {privateEmailContact.revealLabel}
-              </button>
-              <a
-                href="#contact"
-                class="contact-card__button contact-card__button--secondary"
-                data-email-link
-                hidden
-                rel="nofollow"
-              >
-                {privateEmailContact.mailLabel}
-              </a>
-              <button
-                type="button"
-                class="contact-card__button contact-card__button--secondary"
-                data-email-copy
-                hidden
-              >
-                {privateEmailContact.copyLabel}
-              </button>
-            </div>
-          </article>
-
-          {contactLinks.map((link) => (
-            <a href={link.href} class="contact-card observe" data-reveal>
-              <div class="contact-card__label">{link.label}</div>
-              <div class="contact-card__value">{link.value}</div>
-              <div class="contact-card__detail">{link.detail}</div>
-            </a>
-          ))}
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">{footerText}</footer>
-  </div>
-
-  <Enhancements />
+  <main class="coming-soon" aria-labelledby="coming-soon-title">
+    <section class="coming-soon__panel">
+      <img
+        class="coming-soon__mark"
+        src={`${import.meta.env.BASE_URL}favicon.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+      <p class="coming-soon__eyebrow">{comingSoon.eyebrow}</p>
+      <h1 id="coming-soon-title">{comingSoon.title}</h1>
+      <p class="coming-soon__message">{comingSoon.message}</p>
+      <p class="coming-soon__note">{comingSoon.note}</p>
+    </section>
+  </main>
 </BaseLayout>

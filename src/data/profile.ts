@@ -75,9 +75,8 @@ export type ResearchEntry = {
 };
 
 export const siteMeta: SiteMeta = {
-  title: "Jeremy J. Dawson | Health Systems, Ethics, and Public-Interest Technology",
-  description:
-    "Jeremy J. Dawson is an incoming medical student with a background in philosophy, ethics, public-interest technology, and health systems.",
+  title: "Jeremy Dawson | Site Update in Progress",
+  description: "Jeremy Dawson's website is being updated and will return soon.",
   siteName: "Jeremy Dawson",
   socialImage: {
     path: "/og/jeremy-dawson-social.png",
@@ -85,6 +84,14 @@ export const siteMeta: SiteMeta = {
     width: 1200,
     height: 630,
   },
+};
+
+export const comingSoon = {
+  eyebrow: "Site update in progress",
+  title: "Jeremy Dawson",
+  message:
+    "This website is being revised and will return with updated information.",
+  note: "For now, the public site is intentionally offline.",
 };
 
 export const navLinks: NavLink[] = [

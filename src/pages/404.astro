@@ -7,21 +7,23 @@ import { siteMeta } from "../data/profile";
   title={`Not Found | ${siteMeta.title}`}
   description={siteMeta.description}
   siteName={siteMeta.siteName}
-  image={siteMeta.socialImage.path}
-  imageAlt={siteMeta.socialImage.alt}
-  imageWidth={siteMeta.socialImage.width}
-  imageHeight={siteMeta.socialImage.height}
 >
-  <main class="section" style="min-height: calc(100svh - 8rem); display: grid; align-items: center;">
-    <div class="observe is-visible" data-reveal>
-      <p class="section__eyebrow">404</p>
-      <h1 class="section__title">That page does not exist.</h1>
-      <p class="section__lede">
-        The link may be stale, or the page may have moved during a rebuild. Return to the homepage to keep browsing.
+  <main class="coming-soon" aria-labelledby="not-found-title">
+    <section class="coming-soon__panel">
+      <img
+        class="coming-soon__mark"
+        src={`${import.meta.env.BASE_URL}favicon.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+      <p class="coming-soon__eyebrow">404</p>
+      <h1 id="not-found-title">Page not found.</h1>
+      <p class="coming-soon__message">
+        This public site is currently being revised.
       </p>
-      <div class="hero__actions" style="margin-top: 1.75rem;">
-        <a class="button button--primary" href={import.meta.env.BASE_URL}>Back to home</a>
-      </div>
-    </div>
+      <p class="coming-soon__note">
+        <a href={import.meta.env.BASE_URL}>Return to the temporary homepage.</a>
+      </p>
+    </section>
   </main>
 </BaseLayout>
