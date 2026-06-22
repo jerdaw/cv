@@ -1,8 +1,9 @@
 ---
-import type { NavLink } from "../data/profile";
-
 type Props = {
-  navLinks: NavLink[];
+  navLinks: Array<{
+    href: string;
+    label: string;
+  }>;
 };
 
 const { navLinks } = Astro.props;

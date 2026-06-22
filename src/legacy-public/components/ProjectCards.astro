@@ -1,5 +1,18 @@
 ---
-import type { ProjectEntry } from "../data/profile";
+type ProjectEntry = {
+  name: string;
+  status: string;
+  oneLiner: string;
+  problem: string;
+  contribution: string;
+  stack: string[];
+  metrics?: string;
+  links: Array<{
+    label: string;
+    href: string;
+    isPlaceholder?: boolean;
+  }>;
+};
 
 type Props = {
   projects: ProjectEntry[];

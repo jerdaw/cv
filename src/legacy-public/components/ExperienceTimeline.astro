@@ -1,5 +1,13 @@
 ---
-import type { TimelineEntry } from "../data/profile";
+type TimelineEntry = {
+  title: string;
+  organization: string;
+  dateRange: string;
+  location: string;
+  summary: string;
+  tags: string[];
+  link?: string;
+};
 
 type Props = {
   entries: TimelineEntry[];

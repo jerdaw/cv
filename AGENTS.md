@@ -12,12 +12,14 @@ Static Astro site for Jeremy Dawson. The public deployment at [jeremydawson.ca](
 
 | File | Purpose |
 |------|---------|
-| `src/data/profile.ts` | Site content and placeholder copy - edit here first |
+| `src/data/profile.ts` | Active placeholder copy - edit here first |
 | `src/pages/index.astro` | Active temporary homepage |
 | `src/pages/404.astro` | Active temporary 404 page |
 | `src/styles/global.css` | Global styles and design tokens |
 | `src/legacy-public/enhancements.js` | Archived scroll animation logic from the prior full site |
-| `src/components/TimelinePath.astro` | Archived SVG timeline path markup and SVG defs |
+| `src/legacy-public/components/` | Archived prior full-site component markup |
+| `src/legacy-public/components/TimelinePath.astro` | Archived SVG timeline path markup and SVG defs |
+| `.github/workflows/ci.yml` | Non-deploy check/build workflow |
 | `.github/workflows/deploy.yml` | Manual type-check, build, and deploy to Pages |
 
 ## Development
@@ -28,6 +30,7 @@ npm install
 npm run dev       # dev server on :4321
 npm run check     # Astro type-check
 npm run build     # production build to dist/
+npm run verify    # type-check and production build
 npm run preview   # local static preview after build
 ```
 
@@ -36,8 +39,8 @@ Use local preview launch configuration if present. Do not commit local tool conf
 ## Coding Conventions
 
 - **Content**: edit `src/data/profile.ts` first. Active placeholder copy flows from there.
-- **Styles**: use CSS custom properties defined in `:root` (see `global.css`). Do not introduce utility-class frameworks.
-- **Legacy animation**: the prior scroll-driven animation is archived under `src/legacy-public/`; do not move it back into `public/` unless the full-site rewrite needs it.
+- **Styles**: use CSS custom properties defined in `:root` (see `global.css`). The active stylesheet should stay scoped to live placeholder pages until the rewrite resumes. Do not introduce utility-class frameworks.
+- **Legacy archive**: prior full-site components, social-card assets, and scroll-driven animation code are archived under `src/legacy-public/`; do not move them back into active source or `public/` unless the full-site rewrite needs them.
 - **No framework JS**: any browser script should remain plain vanilla ES2020+. No bundler, no imports.
 - **Accessibility**: if animation returns, it must respect `prefers-reduced-motion`.
 - **TypeScript**: strict mode. Run `npm run check` before committing.
@@ -67,7 +70,22 @@ GitHub Actions deployment is manual-only via `workflow_dispatch`:
 2. `npm run build` — production build
 3. Deploy to GitHub Pages
 
-Keep checks and builds passing. Do not add local Playwright runs; leave browser-style checks for GitHub CI if they are introduced later.
+The separate non-deploy `Check` workflow runs `npm run verify` on pushes, pull
+requests, and manual dispatches. Keep checks and builds passing. Do not add local
+Playwright runs; leave browser-style checks for GitHub CI if they are introduced
+later.
+
+## Windows / WSL
+
+This repo lives in WSL and tracks `CLAUDE.md` and `GEMINI.md` as relative
+symlinks to `AGENTS.md`. Prefer WSL Git for source-control operations; Windows
+Git over `\\wsl.localhost` can report those symlinks as modified even when their
+target is unchanged.
+
+The remaining low-severity audit advisory is in Astro's transitive `esbuild`
+dev-server dependency on Windows. Until an Astro 6 patch or Astro 7 upgrade is
+reviewed, keep local dev servers bound to localhost and do not expose them on a
+public network.
 
 ## What to Avoid
 

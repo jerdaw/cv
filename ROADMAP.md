@@ -15,7 +15,7 @@ Phase: `Temporary public placeholder`
 
 ## Remaining Tasks
 
-Status key: `pending` · `optional`
+Status key: `pending` · `optional` · `done` · `blocked`
 
 ### P1
 
@@ -32,7 +32,11 @@ Status key: `pending` · `optional`
 ### Maintenance
 
 - `pending` Keep GitHub Pages deployment manual-only unless the site is ready for routine public updates again.
-- `pending` Review the current Astro/Vite/esbuild and `@astrojs/check` / `yaml-language-server` audit advisories in a dependency-maintenance pass; avoid `npm audit fix --force` unless the breaking changes are reviewed.
+- `done` Add non-deploy CI for `npm run verify` on pushes, pull requests, and manual dispatches.
+- `done` Configure Dependabot for npm and GitHub Actions maintenance PRs.
+- `done` Reduce active placeholder source, CSS, and public data to what is actually rendered.
+- `done` Update Astro to the latest Astro 6 patch and override the vulnerable `yaml-language-server` YAML transitive dependency without using `npm audit fix --force`.
+- `blocked` Resolve the remaining low-severity esbuild audit advisory only after reviewing an Astro 7 upgrade or a safe upstream Astro 6 patch; `npm audit fix --force` currently proposes a breaking Astro 7 update.
 
 ## Notes
 
