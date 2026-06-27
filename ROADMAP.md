@@ -35,8 +35,8 @@ Status key: `pending` · `optional` · `done` · `blocked`
 - `done` Add non-deploy CI for `npm run verify` on pushes, pull requests, and manual dispatches.
 - `done` Configure Dependabot for npm and GitHub Actions maintenance PRs.
 - `done` Reduce active placeholder source, CSS, and public data to what is actually rendered.
-- `done` Update Astro to the latest Astro 6 patch and override the vulnerable `yaml-language-server` YAML transitive dependency without using `npm audit fix --force`.
-- `blocked` Resolve the remaining low-severity esbuild audit advisory only after reviewing an Astro 7 upgrade or a safe upstream Astro 6 patch; `npm audit fix --force` currently proposes a breaking Astro 7 update.
+- `done` Update Astro to the latest Astro 7 release and resolve the Windows `esbuild` dev-server audit advisory without using `npm audit fix --force`.
+- `done` Keep the vulnerable `yaml-language-server` YAML transitive dependency overridden until upstream resolves to a non-vulnerable `yaml` version without it.
 
 ## Notes
 
