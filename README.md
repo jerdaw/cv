@@ -58,10 +58,11 @@ When this WSL repository is accessed through `\\wsl.localhost`, Windows Git may
 report those links as modified even when their target is unchanged. Prefer WSL
 Git for source-control operations in this repository.
 
-The remaining low-severity audit advisory is in Astro's transitive `esbuild`
-dev-server dependency on Windows. Until an Astro 6 patch or Astro 7 upgrade is
-reviewed, keep local dev servers bound to localhost and do not expose them on a
-public network.
+The previous low-severity audit advisory in Astro's transitive `esbuild`
+dev-server dependency on Windows was resolved by the Astro 7 upgrade. Keep local
+dev servers bound to localhost unless a public network exposure is intentional.
+The `yaml-language-server` YAML override remains intentional until upstream
+dependencies resolve to a non-vulnerable `yaml` version without it.
 
 ### Remaining manual items
 

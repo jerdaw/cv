@@ -6,7 +6,7 @@ This file provides guidance for automated coding tools working on this repositor
 
 Static Astro site for Jeremy Dawson. The public deployment at [jeremydawson.ca](https://jeremydawson.ca/) currently serves a temporary placeholder while the full professional site is being rewritten.
 
-**Tech stack**: Astro 6, TypeScript, vanilla CSS, plain JavaScript for any legacy browser enhancements.
+**Tech stack**: Astro 7, TypeScript, vanilla CSS, plain JavaScript for any legacy browser enhancements.
 
 ## Key Files
 
@@ -82,10 +82,11 @@ symlinks to `AGENTS.md`. Prefer WSL Git for source-control operations; Windows
 Git over `\\wsl.localhost` can report those symlinks as modified even when their
 target is unchanged.
 
-The remaining low-severity audit advisory is in Astro's transitive `esbuild`
-dev-server dependency on Windows. Until an Astro 6 patch or Astro 7 upgrade is
-reviewed, keep local dev servers bound to localhost and do not expose them on a
-public network.
+The previous low-severity audit advisory in Astro's transitive `esbuild`
+dev-server dependency on Windows was resolved by the Astro 7 upgrade. Keep local
+dev servers bound to localhost unless a public network exposure is intentional.
+The `yaml-language-server` YAML override remains intentional until upstream
+dependencies resolve to a non-vulnerable `yaml` version without it.
 
 ## What to Avoid
 
