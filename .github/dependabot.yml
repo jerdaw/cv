@@ -5,6 +5,8 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # Keep GitHub Packages scoped in .npmrc so Dependabot does not treat
+    # npm.pkg.github.com as an unscoped replacement for the public npm registry.
     ignore:
       - dependency-name: "@types/node"
         update-types:
