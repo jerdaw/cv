@@ -23,6 +23,7 @@ Static Astro site for Jeremy Dawson. The public deployment at [jeremydawson.ca](
 | `.github/workflows/deploy.yml` | Manual type-check, build, and deploy to Pages |
 | `.github/dependabot.yml` | Weekly npm and GitHub Actions update configuration |
 | `.npmrc` | npm registry defaults and scoped GitHub Packages registry mapping |
+| `scripts/check-*.mjs` | Local verification guards for generated output, public boundary, repo contract, runtime metadata, tracked-file hygiene, CSS affordances, and base-path behavior |
 
 ## Development
 
@@ -32,7 +33,9 @@ npm install
 npm run dev       # dev server on :4321
 npm run check     # Astro type-check
 npm run build     # production build to dist/
-npm run verify    # type-check and production build
+npm run check:guards    # generated output, public-boundary, repo-contract, tracked-file, runtime, and CSS guards
+npm run check:base-path # non-root BASE_PATH build/link smoke check
+npm run verify          # type-check, production build, and guard suite
 npm run preview   # local static preview after build
 ```
 
@@ -76,9 +79,10 @@ GitHub Actions deployment is manual-only via `workflow_dispatch`:
 3. Deploy to GitHub Pages
 
 The separate non-deploy `Check` workflow runs `npm run verify` on pushes, pull
-requests, and manual dispatches. Keep checks and builds passing. Do not add local
-Playwright runs; leave browser-style checks for GitHub CI if they are introduced
-later.
+requests, and manual dispatches. `npm run verify` runs Astro diagnostics,
+production build, and the local guard suite. Keep checks and builds passing. Do
+not add local Playwright runs; leave browser-style checks for GitHub CI if they
+are introduced later.
 
 Dependabot checks npm and GitHub Actions weekly. `.npmrc` keeps public packages
 on the npm registry and scopes GitHub Packages to `@jerdaw`, which prevents
