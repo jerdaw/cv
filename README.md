@@ -24,8 +24,17 @@ matching 404 page. No downloadable CV or resume is published from this repo.
 - `npm run dev`
 - `npm run check`
 - `npm run build`
+- `npm run check:base-path`
+- `npm run check:guards`
 - `npm run verify`
 - `npm run preview`
+
+`npm run check` runs Astro diagnostics. `npm run build` writes static output to
+`dist/`. `npm run check:base-path` builds with a non-root `BASE_PATH` and
+validates the generated links and metadata. `npm run check:guards` runs local
+repository, CSS, and generated-output guards for the placeholder site. `npm run
+verify` runs diagnostics, builds the site, and then runs those guards. No lint
+script or separate test framework is currently configured.
 
 Node 24 is recommended for local development and matches GitHub Actions. The
 repository includes `.node-version` for tools that read it.
@@ -54,7 +63,9 @@ GitHub Packages to `@jerdaw` so Dependabot does not treat `npm.pkg.github.com`
 as a replacement for the public npm registry.
 
 Node type definitions intentionally stay on the Node 24 line while local
-development and GitHub Actions use Node 24.
+development and GitHub Actions use Node 24. Manual dependency changes should be
+targeted and should avoid `npm audit fix --force`; keep the YAML override until
+upstream dependencies resolve to a non-vulnerable `yaml` version without it.
 
 ## Windows / WSL Notes
 

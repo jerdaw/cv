@@ -33,6 +33,7 @@ Status key: `pending` · `optional` · `done` · `blocked`
 
 - `pending` Keep GitHub Pages deployment manual-only unless the site is ready for routine public updates again.
 - `done` Add non-deploy CI for `npm run verify` on pushes, pull requests, and manual dispatches.
+- `done` Add local `npm run verify` guards for generated output, public-boundary, repo-contract, tracked-file, runtime metadata, and CSS contract checks.
 - `done` Configure Dependabot for npm and GitHub Actions maintenance PRs.
 - `done` Reduce active placeholder source, CSS, and public data to what is actually rendered.
 - `done` Update Astro to the latest Astro 7 release and resolve the Windows `esbuild` dev-server audit advisory without using `npm audit fix --force`.
