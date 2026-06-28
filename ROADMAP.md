@@ -37,6 +37,9 @@ Status key: `pending` · `optional` · `done` · `blocked`
 - `done` Reduce active placeholder source, CSS, and public data to what is actually rendered.
 - `done` Update Astro to the latest Astro 7 release and resolve the Windows `esbuild` dev-server audit advisory without using `npm audit fix --force`.
 - `done` Keep the vulnerable `yaml-language-server` YAML transitive dependency overridden until upstream resolves to a non-vulnerable `yaml` version without it.
+- `done` Update GitHub Actions to Node 24-backed major versions and remove the temporary Node 24 force environment override.
+- `done` Update TypeScript to 6.x while keeping `@types/node` aligned with the Node 24 runtime.
+- `done` Scope npm registry configuration so Dependabot can run npm updates without treating GitHub Packages as the public registry.
 
 ## Notes
 

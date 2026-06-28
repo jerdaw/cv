@@ -49,7 +49,12 @@ and environment-specific paths should stay out of public documentation.
 
 The non-deploy check workflow in `.github/workflows/ci.yml` runs `npm run verify`
 on pushes, pull requests, and manual dispatches. Dependabot is configured for npm
-and GitHub Actions updates.
+and GitHub Actions updates. `.npmrc` keeps public packages on npmjs and scopes
+GitHub Packages to `@jerdaw` so Dependabot does not treat `npm.pkg.github.com`
+as a replacement for the public npm registry.
+
+Node type definitions intentionally stay on the Node 24 line while local
+development and GitHub Actions use Node 24.
 
 ## Windows / WSL Notes
 

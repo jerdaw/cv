@@ -21,6 +21,8 @@ Static Astro site for Jeremy Dawson. The public deployment at [jeremydawson.ca](
 | `src/legacy-public/components/TimelinePath.astro` | Archived SVG timeline path markup and SVG defs |
 | `.github/workflows/ci.yml` | Non-deploy check/build workflow |
 | `.github/workflows/deploy.yml` | Manual type-check, build, and deploy to Pages |
+| `.github/dependabot.yml` | Weekly npm and GitHub Actions update configuration |
+| `.npmrc` | npm registry defaults and scoped GitHub Packages registry mapping |
 
 ## Development
 
@@ -44,6 +46,9 @@ Use local preview launch configuration if present. Do not commit local tool conf
 - **No framework JS**: any browser script should remain plain vanilla ES2020+. No bundler, no imports.
 - **Accessibility**: if animation returns, it must respect `prefers-reduced-motion`.
 - **TypeScript**: strict mode. Run `npm run check` before committing.
+- **Dependencies**: keep Node type definitions aligned with the active Node
+  runtime. This repo currently uses Node 24 and ignores `@types/node`
+  semver-major Dependabot updates until the runtime intentionally changes.
 
 ## Authorship and Attribution
 
@@ -74,6 +79,11 @@ The separate non-deploy `Check` workflow runs `npm run verify` on pushes, pull
 requests, and manual dispatches. Keep checks and builds passing. Do not add local
 Playwright runs; leave browser-style checks for GitHub CI if they are introduced
 later.
+
+Dependabot checks npm and GitHub Actions weekly. `.npmrc` keeps public packages
+on the npm registry and scopes GitHub Packages to `@jerdaw`, which prevents
+Dependabot from treating `npm.pkg.github.com` as an unscoped replacement for the
+public npm registry.
 
 ## Windows / WSL
 
