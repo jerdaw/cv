@@ -64,7 +64,7 @@ the destination or file is current, polished, and safe for broad public review.
 The site builds as static Astro output. GitHub Pages deployment lives in
 `.github/workflows/deploy.yml` and is currently manual-only via
 `workflow_dispatch`. The published Pages URL uses the repository project-site
-path at `https://jerdaw.github.io/jeremydawson-site/`. The manual deploy runs
+path at `https://jerdaw.github.io/cv/`. The manual deploy runs
 Astro diagnostics, builds static output, and runs the local guard suite before
 uploading the Pages artifact.
 Private production runbooks, DNS notes, monitoring details, and
