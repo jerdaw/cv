@@ -790,3 +790,48 @@ Rewrite patterns applied:
 - The public copy change is intentionally small but visible on the placeholder homepage and 404 page.
 - The 404 link still says "temporary homepage" because that remains accurate and matches the repo's current public posture.
 - The external prompt-pack contract files were unavailable in the current environment; this is documented above rather than hidden or replaced with invented instructions.
+
+## GitHub Pages Free URL Maintenance - 2026-07-08
+
+### Scope And Instructions
+
+- Objective: close out the repository maintenance for moving the public placeholder from the retired custom-domain path to the free GitHub Pages project URL.
+- Current public URL: `https://jerdaw.github.io/cv/`.
+- Current repository: `jerdaw/cv`.
+- The requested `documentation-guidelines.md`, `testing-guidelines.md`, and `roadmap-process.md` files were not present in the repository during this pass.
+- Public documentation continues to exclude private DNS, registrar, monitoring, credential, and environment-specific production details.
+
+### Surfaces Inspected
+
+- Repo instructions and public docs: `AGENTS.md`, `README.md`, `ROADMAP.md`, and this audit file.
+- Runtime and verification config: `package.json`, `package-lock.json`, `.github/workflows/ci.yml`, `.github/workflows/deploy.yml`, `.github/dependabot.yml`, `astro.config.mjs`, and `scripts/check-*.mjs`.
+- GitHub state: default branch, local remote, open pull requests, branch list, Pages configuration, and latest workflow runs.
+- Local generated artifacts: ignored `.astro/`, `dist/`, and `node_modules/` directories.
+
+### Changes Made
+
+- `AGENTS.md`: recorded the current public GitHub Pages URL.
+- `ROADMAP.md`: replaced the retired custom-domain public URL with `https://jerdaw.github.io/cv/` and marked the free GitHub Pages project URL move as done.
+- `package.json` and `package-lock.json`: updated Astro to the current Astro 7 patch release, superseding the stale open Dependabot patch PR.
+- `docs/maintenance-audit.md`: added this focused maintenance entry.
+
+### Cleanup
+
+- Ignored generated output directories `.astro/` and `dist/` were removed after verification.
+- `node_modules/` remains ignored and installed as the local dependency tree.
+- No `.gitignore` change was needed; generated output, dependencies, env files, and local tool configuration directories are already ignored.
+
+### Verification
+
+- `npm run verify`: passed.
+- `npm run check:base-path`: passed.
+- Production-style `GITHUB_ACTIONS=true GITHUB_REPOSITORY=jerdaw/cv SITE_URL=https://jerdaw.github.io npm run build && npm run check:guards`: passed.
+- `npm install astro@^7.0.7`: passed with `found 0 vulnerabilities`.
+- GitHub `Check` workflow on `main`: passed.
+- Manual GitHub Pages deploy on `main`: passed.
+- Live URL `https://jerdaw.github.io/cv/`: returned `200 OK` and emitted `/cv/` canonical and asset paths.
+
+### Follow-Ups
+
+- Dependabot PR #16 should be closed and its branch deleted after this commit lands because the dependency update is superseded here.
+- Optional account-side cleanup is intentionally not documented here because public docs exclude private DNS and registrar details.

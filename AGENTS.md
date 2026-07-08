@@ -4,7 +4,7 @@ This file provides guidance for automated coding tools working on this repositor
 
 ## Project Overview
 
-Static Astro site for Jeremy Dawson. The public GitHub Pages deployment currently serves a temporary placeholder while the full professional site is being rewritten.
+Static Astro site for Jeremy Dawson. The public GitHub Pages deployment at [jerdaw.github.io/cv](https://jerdaw.github.io/cv/) currently serves a temporary placeholder while the full professional site is being rewritten.
 
 **Tech stack**: Astro 7, TypeScript, vanilla CSS, plain JavaScript for any legacy browser enhancements.
 

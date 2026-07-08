@@ -6,7 +6,7 @@ Phase: `Temporary public placeholder`
 
 ## What's Live
 
-- Minimal Astro placeholder homepage for `https://jeremydawson.ca/`
+- Minimal Astro placeholder homepage for `https://jerdaw.github.io/cv/`
 - Matching temporary 404 page
 - Placeholder copy sourced from `src/data/profile.ts`
 - Manual GitHub Pages deployment workflow
@@ -32,6 +32,7 @@ Status key: `pending` · `optional` · `done` · `blocked`
 ### Maintenance
 
 - `pending` Keep GitHub Pages deployment manual-only unless the site is ready for routine public updates again.
+- `done` Move the public placeholder from the custom domain to the free GitHub Pages project URL.
 - `done` Add non-deploy CI for `npm run verify` on pushes, pull requests, and manual dispatches.
 - `done` Add local `npm run verify` guards for generated output, public-boundary, repo-contract, tracked-file, runtime metadata, and CSS contract checks.
 - `done` Run the local guard suite in the manual GitHub Pages deploy before uploading the Pages artifact.
@@ -46,6 +47,6 @@ Status key: `pending` · `optional` · `done` · `blocked`
 
 ## Notes
 
-- Live URL: `https://jeremydawson.ca/`
+- Live URL: `https://jerdaw.github.io/cv/`
 - Public documentation intentionally excludes deployment runbooks, DNS notes, monitoring details, credentials, and environment-specific paths.
 - The GitHub Pages workflow runs `npm run check`, `npm run build`, and `npm run check:guards` when manually dispatched. Browser/Playwright-style checks should stay in GitHub CI if added later.
