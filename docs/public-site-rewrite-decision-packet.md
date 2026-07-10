@@ -7,6 +7,7 @@
 ## Decision record
 
 - **2026-07-10:** Approved the minimum-publication structure and recommended P-03 through P-12 defaults. P-08 is implemented by the system-font privacy batch. Verbatim P-01/P-02 copy and separate deployment authorization remain required; the full rewrite and deployment are not authorized by this decision.
+- **2026-07-10:** Generated-output guards enforce the current absence of homepage links/contact routes, runtime script tags, and social-image metadata. These checks support the approved P-03, P-05, P-07, P-09, P-10, and P-11 defaults but do not replace content/privacy review or claim to detect every possible tracking or animation technique.
 
 ## Objective
 
