@@ -19,7 +19,7 @@ Status key: `pending` · `optional` · `done` · `blocked`
 
 ### P1
 
-- `pending` Approve the minimum-publication structure and final public copy in [`docs/public-site-rewrite-decision-packet.md`](docs/public-site-rewrite-decision-packet.md), then implement the full-site rewrite in guarded batches.
+- `pending` The minimum-publication structure and recommended P-03 through P-12 defaults are approved; supply and approve verbatim P-01/P-02 copy before implementing the full-site rewrite in guarded batches.
 - `pending` Finalize and explicitly approve the master CV before adding any public PDF or downloadable resume link (P-06).
 - `pending` Add verified ORCID, LinkedIn, GitHub, or other public profile links only after each destination is current and approved for broad public review (P-05).
 - `pending` Decide which project, research, and career-history summaries should return to the public site (P-03/P-04).

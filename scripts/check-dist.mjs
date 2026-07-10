@@ -58,6 +58,12 @@ function assertIncludes(content, expected, label) {
   }
 }
 
+function assertNotIncludes(content, forbidden, label) {
+  if (content.includes(forbidden)) {
+    fail(`${label} includes forbidden content: ${forbidden}`);
+  }
+}
+
 function listFiles(dir) {
   if (!existsSync(dir)) return [];
 
@@ -83,6 +89,11 @@ for (const file of expectedFiles) {
 
 const indexHtml = readRequiredFile(join(distDir, "index.html"));
 const notFoundHtml = readRequiredFile(join(distDir, "404.html"));
+
+for (const origin of ["fonts.googleapis.com", "fonts.gstatic.com"]) {
+  assertNotIncludes(indexHtml, origin, "Homepage");
+  assertNotIncludes(notFoundHtml, origin, "404 page");
+}
 
 const expectedIconPath = `${expectedBasePath}favicon.svg`;
 const expectedIndexUrl = siteUrl(expectedBasePath);

@@ -1,8 +1,12 @@
 # Public Site Rewrite Decision Packet
 
-**Status:** Ready for owner decisions; no public-content change authorized
+**Status:** Minimum structure and P-03 through P-12 defaults approved; P-01/P-02 copy and deployment pending
 **Prepared:** 2026-07-10
 **Current live posture:** Temporary placeholder only
+
+## Decision record
+
+- **2026-07-10:** Approved the minimum-publication structure and recommended P-03 through P-12 defaults. P-08 is implemented by the system-font privacy batch. Verbatim P-01/P-02 copy and separate deployment authorization remain required; the full rewrite and deployment are not authorized by this decision.
 
 ## Objective
 
@@ -15,7 +19,7 @@ Turn the broad full-site rewrite roadmap into a small, privacy-safe publication 
 - The prior full-site components and email enhancement are archived under `src/legacy-public/` and are not emitted by the production build.
 - Archived content is historical implementation material, not current consent to republish any fact or contact detail.
 - No CV or resume is currently emitted from `public/`.
-- The active layout loads Montserrat and Open Sans from Google Fonts; no analytics or tracking script is present.
+- The active layout uses a local system-font stack; no analytics or tracking script is present.
 - Deployment is manual-only and remains outside this packet.
 
 ## Recommended minimum-publication bundle
@@ -41,7 +45,7 @@ This keeps the page useful while limiting staleness, identity correlation, spam 
 | P-05 | Public profile links | Omit by default | Confirm account control, current destination, preferred label, and permission to publish each link |
 | P-06 | CV/resume | Omit until the master document is final, intentionally public, and scrubbed for unnecessary contact/location data | Approve the exact reviewed file and public filename |
 | P-07 | Contact | No direct email in the first release; archived email code is not publication approval | Choose no contact, a verified profile route, or a deliberately public email alias |
-| P-08 | Fonts/privacy | Use a local system-font stack in the rewrite to remove third-party font requests | Approve the system-font direction or explicitly retain Google Fonts |
+| P-08 | Fonts/privacy | Use a local system-font stack in the rewrite to remove third-party font requests | Approved and implemented 2026-07-10 |
 | P-09 | Analytics | None | A later analytics proposal must specify provider, data collected, retention, cookie/consent behavior, and public privacy disclosure |
 | P-10 | Timeline animation | Omit from the first release; preserve reduced-motion support if restored later | Approve only after static content and mobile layout are accepted |
 | P-11 | Social preview image | Use no personal photo by default; create only from approved public text/graphics | Approve the image contents and alt text |

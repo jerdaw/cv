@@ -5,8 +5,8 @@
   --ink: #e2edf0;
   --muted: rgba(160, 197, 204, 0.78);
   --accent: #e8756b;
-  --font-heading: "Montserrat", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {

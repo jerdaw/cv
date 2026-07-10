@@ -4,10 +4,28 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = fileURLToPath(new URL("../", import.meta.url));
 const css = readFileSync(join(rootDir, "src", "styles", "global.css"), "utf8");
+const layout = readFileSync(join(rootDir, "src", "layouts", "BaseLayout.astro"), "utf8");
 const failures = [];
+
+const forbiddenFontOrigins = ["fonts.googleapis.com", "fonts.gstatic.com"];
+const approvedFontStack =
+  'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 
 function fail(message) {
   failures.push(message);
+}
+
+for (const origin of forbiddenFontOrigins) {
+  if (css.includes(origin) || layout.includes(origin)) {
+    fail(`Active CSS and layout source must not reference ${origin}.`);
+  }
+}
+
+for (const variable of ["--font-heading", "--font-body"]) {
+  const declaration = `${variable}: ${approvedFontStack};`;
+  if (!css.includes(declaration)) {
+    fail(`global.css must declare ${declaration}`);
+  }
 }
 
 if (!css.includes(":focus-visible")) {
