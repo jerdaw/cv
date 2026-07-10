@@ -19,10 +19,10 @@ Status key: `pending` · `optional` · `done` · `blocked`
 
 ### P1
 
-- `pending` Rewrite the full public site around the medical school transition before expanding beyond the temporary placeholder.
-- `pending` Finalize the master CV before adding any public PDF or downloadable resume link.
-- `pending` Add verified ORCID, LinkedIn, GitHub, or other public profile links only after each destination is current and ready for broad public review.
-- `pending` Decide which project, research, and career-history summaries should return to the public site.
+- `pending` Approve the minimum-publication structure and final public copy in [`docs/public-site-rewrite-decision-packet.md`](docs/public-site-rewrite-decision-packet.md), then implement the full-site rewrite in guarded batches.
+- `pending` Finalize and explicitly approve the master CV before adding any public PDF or downloadable resume link (P-06).
+- `pending` Add verified ORCID, LinkedIn, GitHub, or other public profile links only after each destination is current and approved for broad public review (P-05).
+- `pending` Decide which project, research, and career-history summaries should return to the public site (P-03/P-04).
 
 ### Polish / Visual
 
