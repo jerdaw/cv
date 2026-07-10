@@ -64,6 +64,12 @@ function assertNotIncludes(content, forbidden, label) {
   }
 }
 
+function assertDoesNotMatch(content, pattern, label) {
+  if (pattern.test(content)) {
+    fail(`${label} includes content matching forbidden pattern: ${pattern}`);
+  }
+}
+
 function listFiles(dir) {
   if (!existsSync(dir)) return [];
 
@@ -93,6 +99,34 @@ const notFoundHtml = readRequiredFile(join(distDir, "404.html"));
 for (const origin of ["fonts.googleapis.com", "fonts.gstatic.com"]) {
   assertNotIncludes(indexHtml, origin, "Homepage");
   assertNotIncludes(notFoundHtml, origin, "404 page");
+}
+
+for (const [pattern, label] of [
+  [/<a(?=[\s/>])/i, "Homepage public link or contact route"],
+  [/mailto:/i, "Homepage email route"],
+  [/tel:/i, "Homepage telephone route"],
+  [/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i, "Homepage email address"],
+]) {
+  assertDoesNotMatch(indexHtml, pattern, label);
+}
+
+for (const [content, pageLabel] of [
+  [indexHtml, "Homepage"],
+  [notFoundHtml, "404 page"],
+]) {
+  for (const [pattern, contentLabel] of [
+    [/<script(?=[\s/>])/i, "runtime script"],
+    [
+      /<meta\b[^>]*\bproperty\s*=\s*(?:["']og:image["']|og:image)(?:\s|\/?>)/i,
+      "Open Graph image metadata",
+    ],
+    [
+      /<meta\b[^>]*\bname\s*=\s*(?:["']twitter:image["']|twitter:image)(?:\s|\/?>)/i,
+      "Twitter image metadata",
+    ],
+  ]) {
+    assertDoesNotMatch(content, pattern, `${pageLabel} ${contentLabel}`);
+  }
 }
 
 const expectedIconPath = `${expectedBasePath}favicon.svg`;

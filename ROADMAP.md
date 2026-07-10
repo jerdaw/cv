@@ -35,6 +35,7 @@ Status key: `pending` · `optional` · `done` · `blocked`
 - `done` Move the public placeholder from the custom domain to the free GitHub Pages project URL.
 - `done` Add non-deploy CI for `npm run verify` on pushes, pull requests, and manual dispatches.
 - `done` Add local `npm run verify` guards for generated output, public-boundary, repo-contract, tracked-file, runtime metadata, and CSS contract checks.
+- `done` Guard current first-release output against homepage links/contact routes, runtime script tags, and social-image metadata.
 - `done` Run the local guard suite in the manual GitHub Pages deploy before uploading the Pages artifact.
 - `done` Configure Dependabot for npm and GitHub Actions maintenance PRs.
 - `done` Reduce active placeholder source, CSS, and public data to what is actually rendered.
